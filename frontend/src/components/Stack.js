@@ -2,14 +2,18 @@ import React from 'react';
 import { Stack, Text, Flex } from '@chakra-ui/react';
 import { RiUserFill } from 'react-icons/ri';
 import { HiUserGroup } from 'react-icons/hi';
+import { useState } from 'react';
 
 
-export default function SimpleCookiePreference() {
+const HStack = () => {
+  const [single,setSingle] = useState(true);
+  const [team,setTeam] = useState(false);
+
   return (
     <Flex direction='row' >
     
-    <Stack p="4" width='200px' border='1px solid #5e34eb' m="4 "  borderRadius="sm">
-    <RiUserFill color='#5e34eb' />
+    <Stack p="4" width='200px'  border={single ?  '1px solid #5e34eb' : ''} boxShadow="lg" m="4 "  borderRadius="sm" onClick={(e) => {setSingle(!single);setTeam(false)}}>
+    <RiUserFill color={single ? '#5e34eb' : ''} />
       <Stack>
         <Text fontWeight="semibold">For myself</Text>
         
@@ -24,8 +28,8 @@ export default function SimpleCookiePreference() {
       </Stack>
     </Stack>
 
-    <Stack p="4" width='200px' boxShadow="lg" m="4" borderRadius="sm">
-    <HiUserGroup />
+    <Stack p="4" width='200px' border={team ?  '1px solid #5e34eb' : ''} boxShadow="lg" m="4" borderRadius="sm" onClick={(e) => {setTeam(!team);setSingle(false)}}>
+    <HiUserGroup color={team ? '#5e34eb' : ''}  />
       <Stack>
         <Text fontWeight="semibold">With my team</Text>
       </Stack>
@@ -41,3 +45,4 @@ export default function SimpleCookiePreference() {
     </Flex>
   );
 }
+export default HStack;

@@ -5,10 +5,18 @@ import {
  Button,
 } from '@chakra-ui/react';
 import FormContainer from './FormContainer';
-import SimpleCookiePreference from './Stack';
+import HStack from './Stack';
 import CheckoutSteps from './CheckoutStep';
+import {useNavigate} from 'react-router-dom';
 
 const ThirdStep = () => {
+ const navigate = useNavigate();
+
+ const submitHandler = (e) => {
+  e.preventDefault();
+  navigate('/fourth')
+ }
+
  return (
   <Flex
    w='full'
@@ -37,7 +45,7 @@ const ThirdStep = () => {
     </Heading>
     <Flex direction='column'>
     <Flex direction='row'>
-    <SimpleCookiePreference />
+    <HStack />
     </Flex>
 
     <Button
@@ -46,6 +54,8 @@ const ThirdStep = () => {
      color='white'
      mt='4'
      width='100%'
+     onClick={submitHandler}
+     _hover={{boxShadow: "lg",opacity:'0.8'}}
       >
      Create Workspace
     </Button>

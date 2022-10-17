@@ -10,9 +10,16 @@ import {
 } from '@chakra-ui/react';
 import FormContainer from './FormContainer';
 import CheckoutSteps from './CheckoutStep';
+import {useNavigate} from 'react-router-dom';
 
 
 const FirstStep = () => {
+  const navigate = useNavigate();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    navigate('/second')
+  }
   return (
     <Flex
       w='full'
@@ -21,8 +28,6 @@ const FirstStep = () => {
       py='5'
     >
       <FormContainer>
-       
-
         <CheckoutSteps step1 />
         <Heading
           as='h1'
@@ -40,13 +45,14 @@ const FirstStep = () => {
           You can always change them later
         </Heading>
 
-        <form>
+        <form onSubmit={submitHandler}>
           <FormControl id='name'>
             <FormLabel fontWeight='bold'>Full Name</FormLabel>
             <Input
               id='name'
               type='text'
               placeholder='Steve Jobs'
+              isRequired
             />
           </FormControl>
           <Spacer h='3' />
@@ -57,6 +63,7 @@ const FirstStep = () => {
               id='displayName'
               type='text'
               placeholder='Steve'
+              isRequired
             />
           </FormControl>
 
@@ -66,6 +73,7 @@ const FirstStep = () => {
             color='white'
             mt='4'
             width='25vw'
+            _hover={{boxShadow: "lg",opacity:'0.8'}}
           >
             Create Workspace
           </Button>

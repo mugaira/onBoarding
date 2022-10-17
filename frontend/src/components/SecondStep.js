@@ -13,8 +13,15 @@ import {
 } from '@chakra-ui/react';
 import FormContainer from './FormContainer';
 import CheckoutSteps from './CheckoutStep';
+import {useNavigate} from 'react-router-dom';
 
 const SecondStep = () => {
+ const navigate = useNavigate();
+
+ const submitHandler = (e) => {
+  e.preventDefault();
+  navigate('/third')
+ }
  return (
   <Flex
    w='full'
@@ -42,13 +49,14 @@ const SecondStep = () => {
      You can always create another workspace later
     </Heading>
     <Flex>
-    <form>
+    <form onSubmit={submitHandler}>
      <FormControl id='workspaceName'>
       <FormLabel fontWeight='bold'>Workspace Name</FormLabel>
       <Input
        id='workspaceName'
        type='text'
        placeholder='Eden'
+       isRequired
       />
      </FormControl>
      <Spacer h='3' />
@@ -67,8 +75,9 @@ const SecondStep = () => {
        <InputLeftAddon children='www.eden.com/' />
        <Input
         id='url'
-        type='url'
+        type='text'
         placeholder='Example'
+        isRequired
        />
       </InputGroup>
      </FormControl>
@@ -79,6 +88,7 @@ const SecondStep = () => {
       color='white'
       mt='4'
       width='100%'
+      _hover={{boxShadow: "lg",opacity:'0.8'}}
      >
       Create Workspace
      </Button>

@@ -23,9 +23,9 @@ const FourthStep = () => {
    <Flex justifyContent='center' mb='8'>
    <Icon 
    as={AiFillCheckCircle}
-   h='8'
-   w='8'
-   color='blue.600'
+   h='12'
+   w='12'
+   color=' #5e34eb'
    
    />
    </Flex>
@@ -54,6 +54,7 @@ const FourthStep = () => {
      color='white'
      mt='4'
      width='25vw'
+     _hover={{boxShadow: "lg",opacity:'0.8'}}
     >
     Launch
     </Button>

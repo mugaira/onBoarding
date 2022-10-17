@@ -9,17 +9,17 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-    
-    <div style={{padding:'10px',height:'100vh'}}  >
-      <Flex borderRadius='lg' h='100%' bgColor='gray.200'>
-      {/* <Routes> */}
-        {/* <FirstStep /> */}
-        {/* <SecondStep /> */}
-        <ThirdStep />
-        {/* <FourthStep /> */}
-        {/* </Routes> */}
-      </Flex>
-    </div>
+
+      <div style={{ padding: '10px', height: '100vh' }}  >
+        <Flex borderRadius='lg' h='100%' bgColor='gray.200'>
+          <Routes>
+            <Route path='/' element={<FirstStep />} />
+            <Route path='/second' element={<SecondStep />} />
+            <Route path='/third' element={<ThirdStep />} />
+            <Route path='/fourth' element={<FourthStep />} />
+          </Routes>
+        </Flex>
+      </div>
     </BrowserRouter>
   );
 }
