@@ -11,8 +11,8 @@ import {
  InputLeftAddon,
  InputGroup,
 } from '@chakra-ui/react';
-import FormContainer from './FormContainer';
-import CheckoutSteps from './CheckoutStep';
+import FormContainer from '../components/FormContainer';
+import CheckoutSteps from '../components/CheckoutStep';
 import {useNavigate} from 'react-router-dom';
 
 const SecondStep = () => {

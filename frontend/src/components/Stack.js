@@ -12,7 +12,7 @@ const HStack = () => {
   return (
     <Flex direction='row' >
     
-    <Stack p="4" width='200px'  border={single ?  '1px solid #5e34eb' : ''} boxShadow="lg" m="4 "  borderRadius="sm" onClick={(e) => {setSingle(!single);setTeam(false)}}>
+    <Stack p="4" width={{base:'150px',md:'200px'}}  border={single ?  '1px solid #5e34eb' : ''} boxShadow="lg" m="4 "  borderRadius="sm" onClick={(e) => {setSingle(!single);setTeam(false)}}>
     <RiUserFill color={single ? '#5e34eb' : ''} />
       <Stack>
         <Text fontWeight="semibold">For myself</Text>
@@ -28,7 +28,7 @@ const HStack = () => {
       </Stack>
     </Stack>
 
-    <Stack p="4" width='200px' border={team ?  '1px solid #5e34eb' : ''} boxShadow="lg" m="4" borderRadius="sm" onClick={(e) => {setTeam(!team);setSingle(false)}}>
+    <Stack p="4" width={{base:'150px',md:'200px'}} border={team ?  '1px solid #5e34eb' : ''} boxShadow="lg" m="4" borderRadius="sm" onClick={(e) => {setTeam(!team);setSingle(false)}}>
     <HiUserGroup color={team ? '#5e34eb' : ''}  />
       <Stack>
         <Text fontWeight="semibold">With my team</Text>

@@ -5,8 +5,8 @@ import {
  Button,
  Icon,
 } from '@chakra-ui/react';
-import FormContainer from './FormContainer';
-import CheckoutSteps from './CheckoutStep';
+import FormContainer from '../components/FormContainer';
+import CheckoutSteps from '../components/CheckoutStep';
 import {AiFillCheckCircle} from 'react-icons/ai'
 
 

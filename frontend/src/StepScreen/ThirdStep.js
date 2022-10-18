@@ -4,9 +4,9 @@ import {
  Heading,
  Button,
 } from '@chakra-ui/react';
-import FormContainer from './FormContainer';
-import HStack from './Stack';
-import CheckoutSteps from './CheckoutStep';
+import FormContainer from '../components/FormContainer';
+import HStack from '../components/Stack';
+import CheckoutSteps from '../components/CheckoutStep';
 import {useNavigate} from 'react-router-dom';
 
 const ThirdStep = () => {
@@ -43,7 +43,7 @@ const ThirdStep = () => {
     >
      We'll streamline your setup exprience accordingly.
     </Heading>
-    <Flex direction='column'>
+    <Flex direction='column' justifyContent='center'>
     <Flex direction='row'>
     <HStack />
     </Flex>
